@@ -13,6 +13,7 @@ struct s_studente{
 typedef struct s_studente studente;
 
 
-int inserisciDati(studente dato[],int dim);
+int inserisciDati(studente *dato,int *dim);
+void distinguiSesso(studente *dato, studente** maschi, studente** femmine, int* m, int* f, int dim);
 void ordinaDati(studente dato[],int dim);
 void stampa(studente dato[],int dim, char fname[]);

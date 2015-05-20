@@ -18,20 +18,26 @@ struct s_studente{
 typedef struct s_studente studente;
 
 
-int inserisciDati(studente dato[],int dim){
+int inserisciDati(studente *dato,int *dim){
     int i;
-    for(i=0;i<dim;i++){
-        printf("Nome: ");
-        scanf("%s",dato[i].nome);
+    while(strcmp(*dato[i]->nome,"00")){
+        if(i==*dim){
+            realloc(*dato,*dim*2);
+            *dim*=2;
+        }
+        printf("Nome (00 per terminare): ");
+        scanf("%s",*dato[i]->nome);
         printf("Cognome: ");
-        scanf("%s",dato[i].cognome);
+        scanf("%s",*dato[i]->cognome);
         printf("Classe: ");
-        scanf("%s",dato[i].classe);
+        scanf("%s",*dato[i]->classe);
         printf("Sesso (0 uomo 1 donna): ");
-        scanf("%d",&(dato[i].sesso));
+        scanf("%d",&(*dato[i]->sesso));
         printf("Età: ");
-        scanf("%d",&(dato[i].eta));
+        scanf("%d",&(*dato[i]->eta));
+        i++;
     }
+    
 }
 
 void stampa(studente dato[],int dim, char fname[]){
@@ -57,11 +63,26 @@ void ordinaDati(studente dato[],int dim){
     
     for(i=0;i<dim-1;i++){
         for(j=0;j<dim-1;j++){
-            if((strcmp(dato[j].cognome,dato[j+1].cognome))){
+            if((strcmp(dato[j].cognome,dato[j+1].cognome))>0){
                 temp=dato[j];
                 dato[j]=dato[j+1];
                 dato[j+1]=temp;
             }
+        }
+    }
+}
+void distinguiSesso(studente *dato, studente** maschi, studente** femmine, int* m, int* f, int dim){
+    int i,j,k;
+    k=0;
+    j=0;
+    for(i=0;i<dim;i++){
+        if(dato[i]->sesso==0){
+            *maschi[j++]=dato[i];
+            *m=*m+1;
+        }
+        else{
+            *femmine[k++]=dato[i];
+            *f=*f+1;
         }
     }
 }

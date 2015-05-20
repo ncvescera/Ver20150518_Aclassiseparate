@@ -9,31 +9,26 @@ typedef struct s_studente studente;
 
 
 int main(int argc, char** argv) {
-    int dim;
+    int dim=2;
     int i,m,f,j,k;
+    studente *elenco;
+    studente *maschi;
+    studente *femmine;
+    elenco=(studente*)malloc(dim*sizeof(studente));
+    maschi=(studente*)malloc(dim*sizeof(studente));
+    femmine=(studente*)malloc(dim*sizeof(studente));
+    //printf("Quanti studenti vuoi inserire ?");
+    //scanf("%d",&dim);
     
-    printf("Quanti studenti vuoi inserire ?");
-    scanf("%d",&dim);
-    studente elenco[dim];
-    studente maschi[dim];
-    studente femmine[dim];
+    
+    
 
-    inserisciDati(elenco,dim);
+    inserisciDati(&elenco,&dim);
     
     m=0;
     f=0;
-    j=0;
-    k=0;
-    for(i=0;i<dim;i++){
-        if(elenco[i].sesso==0){
-            maschi[j++]=elenco[i];
-            m++;
-        }
-        else{
-            femmine[k++]=elenco[i];
-            f++;
-        }
-    }
+       
+    distinguiSesso(elenco,&maschi,&femmine,&m,&f,dim);
   
     ordinaDati(maschi,m);
     ordinaDati(femmine,f);
