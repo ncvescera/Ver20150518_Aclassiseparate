@@ -18,29 +18,33 @@ struct s_studente{
 typedef struct s_studente studente;
 
 
-int inserisciDati(studente *dato,int *dim){
-    int i;
-    while(strcmp(*dato[i]->nome,"00")){
+studente inserisciDati(/*studente** dato,int *dim*/){
+    studente alunno;
+    /*int i;
+    while(strcmp(dato[i]->nome,"00")){
         if(i==*dim){
-            realloc(*dato,*dim*2);
+            *dato=(studente*)realloc(*dato,*dim);
             *dim*=2;
-        }
-        printf("Nome (00 per terminare): ");
-        scanf("%s",*dato[i]->nome);
-        printf("Cognome: ");
-        scanf("%s",*dato[i]->cognome);
-        printf("Classe: ");
-        scanf("%s",*dato[i]->classe);
-        printf("Sesso (0 uomo 1 donna): ");
-        scanf("%d",&(*dato[i]->sesso));
-        printf("Età: ");
-        scanf("%d",&(*dato[i]->eta));
-        i++;
-    }
+        }*/
     
+        printf("Nome (00 per terminare): ");
+        scanf("%s",(alunno.nome));
+        printf("Cognome: ");
+        scanf("%s",(alunno.cognome));
+        printf("Classe: ");
+        scanf("%s",(alunno.classe));
+        printf("Sesso (0 uomo 1 donna): ");
+        scanf("%d",&(alunno.sesso));
+        printf("Età: ");
+        scanf("%d",&(alunno.eta));
+      
+        
+        return alunno;
+    
+   
 }
 
-void stampa(studente dato[],int dim, char fname[]){
+void stampa(studente *dato, int dim, char fname[]){
     FILE *puntafile=NULL;
     int i;
     
@@ -57,7 +61,7 @@ void stampa(studente dato[],int dim, char fname[]){
     fclose(puntafile);
 }
 
-void ordinaDati(studente dato[],int dim){
+void ordinaDati(studente *dato, int dim){
     int i,j;
     studente temp;
     
@@ -71,18 +75,18 @@ void ordinaDati(studente dato[],int dim){
         }
     }
 }
-void distinguiSesso(studente *dato, studente** maschi, studente** femmine, int* m, int* f, int dim){
-    int i,j,k;
+void distinguiSesso(studente dato, studente** maschi, studente** femmine, int* m, int* f, int dim){
+    /*int i,j,k;
     k=0;
     j=0;
-    for(i=0;i<dim;i++){
-        if(dato[i]->sesso==0){
-            *maschi[j++]=dato[i];
+    for(i=0;i<dim;i++){*/
+        if(dato.sesso==0){
+            *maschi[*m]=dato;
             *m=*m+1;
         }
         else{
-            *femmine[k++]=dato[i];
+            *femmine[*f]=dato;
             *f=*f+1;
         }
-    }
+   
 }
