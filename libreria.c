@@ -75,14 +75,21 @@ void ordinaDati(studente *dato, int dim){
         }
     }
 }
-void distinguiSesso(studente dato, studente** maschi, studente** femmine, int* m, int* f){
+/*void distinguiSesso(studente dato, studente** maschi, studente** femmine, int* m, int* f){
     /*int i,j,k;
     k=0;
     j=0;
-    for(i=0;i<dim;i++){*/
-        
+    for(i=0;i<dim;i++){
+        if(dato.sesso==0){
+            *maschi[*m]=dato;
+            *m=*m+1;
+        }
+        else{
+            *femmine[*f]=dato;
+            *f=*f+1;
+        }
    
-}
+}*/
 studente* rialloca(studente* corrente, int dimCorrente){
     studente* nuovoPuntatore=NULL;
     int nuovaDimensione=dimCorrente*2;

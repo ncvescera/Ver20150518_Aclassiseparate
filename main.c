@@ -30,7 +30,6 @@ int main(int argc, char** argv) {
     inserito=-1;
     while(inserito!=0){
         if(m==dimM){
-            //coseM=(int*)realloc(maschi,dimM*2);
             maschi=rialloca(maschi,dimM);
             dimM*=2;
         }
@@ -39,8 +38,7 @@ int main(int argc, char** argv) {
             dimF*=2;
         }
         
-        temp=inserisciDati(/*&elenco,&dim*/);          
-        //distinguiSesso(temp,&maschi,&femmine,&m,&f);
+        temp=inserisciDati();          
         if(temp.sesso==0){
             maschi[m]=temp;
             m=m+1;
@@ -55,8 +53,8 @@ int main(int argc, char** argv) {
         puts("");
     }
     
-    //ordinaDati(maschi,m);
-    //ordinaDati(femmine,f);
+    ordinaDati(maschi,m);
+    ordinaDati(femmine,f);
     
         
     stampa(maschi,m,FNAMEM);
