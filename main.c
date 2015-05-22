@@ -4,10 +4,6 @@
 #include "libreria.h"
 #include "FNAME.h"
 
-
-
-
-
 int main(int argc, char** argv) {
     int dimM=2;
     int dimF=2;

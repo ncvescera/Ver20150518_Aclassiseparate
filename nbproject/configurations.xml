@@ -4,10 +4,8 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
-      <itemPath>FNAME.h</itemPath>
-      <itemPath>LENGHT.h</itemPath>
       <itemPath>libreria.h</itemPath>
-      <itemPath>studente.h</itemPath>
+      <itemPath>settings.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
@@ -41,17 +39,13 @@
       </toolsSet>
       <compileType>
       </compileType>
-      <item path="FNAME.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="LENGHT.h" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="libreria.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="libreria.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="main.c" ex="false" tool="0" flavor2="0">
       </item>
-      <item path="studente.h" ex="false" tool="3" flavor2="0">
+      <item path="settings.h" ex="false" tool="3" flavor2="0">
       </item>
     </conf>
     <conf name="Release" type="1">
@@ -74,17 +68,13 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
-      <item path="FNAME.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="LENGHT.h" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="libreria.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="libreria.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="main.c" ex="false" tool="0" flavor2="0">
       </item>
-      <item path="studente.h" ex="false" tool="3" flavor2="0">
+      <item path="settings.h" ex="false" tool="3" flavor2="0">
       </item>
     </conf>
   </confs>
