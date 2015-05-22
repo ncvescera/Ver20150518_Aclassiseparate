@@ -11,23 +11,18 @@
 int main(int argc, char** argv) {
     int dimM=2;
     int dimF=2;
-    
-    int *coseM;
-    int *coseF;
-    
     int m,f,inserito;
     studente temp;
     studente *maschi;
     studente *femmine;
-    //elenco=(studente*)malloc(dim*sizeof(studente));
+       
     maschi=(studente*)malloc(dimM*sizeof(studente));
     femmine=(studente*)malloc(dimF*sizeof(studente));
-    //printf("Quanti studenti vuoi inserire ?");
-    //scanf("%d",&dim);
+    
     m=0;
     f=0;
-    
     inserito=-1;
+    
     while(inserito!=0){
         if(m==dimM){
             maschi=rialloca(maschi,dimM);

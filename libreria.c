@@ -7,21 +7,18 @@
 studente inserisciDati(){
     studente alunno;
    
-        printf("Nome: ");
-        scanf("%s",(alunno.nome));
-        printf("Cognome: ");
-        scanf("%s",(alunno.cognome));
-        printf("Classe: ");
-        scanf("%s",(alunno.classe));
-        printf("Sesso (0 uomo 1 donna): ");
-        scanf("%d",&(alunno.sesso));
-        printf("Età: ");
-        scanf("%d",&(alunno.eta));
+    printf("Nome: ");
+    scanf("%[^\n]",(alunno.nome));
+    printf("Cognome: ");
+    scanf("\n%[^\n]",(alunno.cognome));
+    printf("Classe: ");
+    scanf("%s",(alunno.classe));
+    printf("Sesso (0 uomo 1 donna): ");
+    scanf("%d",&(alunno.sesso));
+    printf("Età: ");
+    scanf("%d",&(alunno.eta));
       
-        
-        return alunno;
-    
-   
+    return alunno;
 }
 void stampa(studente *dato, int dim, char fname[]){
     FILE *puntafile=NULL;
