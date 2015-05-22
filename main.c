@@ -2,10 +2,10 @@
 #include <stdlib.h>
 #include <string.h>
 #include "libreria.h"
+#include "FNAME.h"
 
 
 
-typedef struct s_studente studente;
 
 
 int main(int argc, char** argv) {

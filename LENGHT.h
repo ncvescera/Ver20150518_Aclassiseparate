@@ -1,0 +1,2 @@
+#define MAXSTRLEN 25
+#define CLASSLEN 5

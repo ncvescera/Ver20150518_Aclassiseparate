@@ -1,33 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
-#define MAXSTRLEN 25
-#define CLASSLEN 5
-#define FNAMEM "maschi.csv"
-#define FNAMEF "femmine.csv"
-
-struct s_studente{
-    char nome[MAXSTRLEN+1];
-    char cognome[MAXSTRLEN+1];
-    char classe[CLASSLEN+1];
-    int sesso;
-    int eta;
-};
-
-typedef struct s_studente studente;
+#include "studente.h"
 
 
-studente inserisciDati(/*studente** dato,int *dim*/){
+studente inserisciDati(){
     studente alunno;
-    /*int i;
-    while(strcmp(dato[i]->nome,"00")){
-        if(i==*dim){
-            *dato=(studente*)realloc(*dato,*dim);
-            *dim*=2;
-        }*/
-    
-        printf("Nome (00 per terminare): ");
+   
+        printf("Nome: ");
         scanf("%s",(alunno.nome));
         printf("Cognome: ");
         scanf("%s",(alunno.cognome));
@@ -43,7 +23,6 @@ studente inserisciDati(/*studente** dato,int *dim*/){
     
    
 }
-
 void stampa(studente *dato, int dim, char fname[]){
     FILE *puntafile=NULL;
     int i;
@@ -60,7 +39,6 @@ void stampa(studente *dato, int dim, char fname[]){
     }
     fclose(puntafile);
 }
-
 void ordinaDati(studente *dato, int dim){
     int i,j;
     studente temp;
@@ -75,21 +53,6 @@ void ordinaDati(studente *dato, int dim){
         }
     }
 }
-/*void distinguiSesso(studente dato, studente** maschi, studente** femmine, int* m, int* f){
-    /*int i,j,k;
-    k=0;
-    j=0;
-    for(i=0;i<dim;i++){
-        if(dato.sesso==0){
-            *maschi[*m]=dato;
-            *m=*m+1;
-        }
-        else{
-            *femmine[*f]=dato;
-            *f=*f+1;
-        }
-   
-}*/
 studente* rialloca(studente* corrente, int dimCorrente){
     studente* nuovoPuntatore=NULL;
     int nuovaDimensione=dimCorrente*2;
