@@ -75,7 +75,7 @@ void ordinaDati(studente *dato, int dim){
         }
     }
 }
-void distinguiSesso(studente dato, studente** maschi, studente** femmine, int* m, int* f, int dim){
+void distinguiSesso(studente dato, studente** maschi, studente** femmine, int* m, int* f){
     /*int i,j,k;
     k=0;
     j=0;

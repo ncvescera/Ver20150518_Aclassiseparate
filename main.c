@@ -27,22 +27,24 @@ int main(int argc, char** argv) {
     m=0;
     f=0;
     
-    
-    do{
-        temp=inserisciDati(/*&elenco,&dim*/);          
-        distinguiSesso(temp,&maschi,&femmine,&m,&f,dimM);
+    inserito=-1;
+    while(inserito!=0){
         if(m==dimM){
-            coseM=(int*)realloc(maschi,dimM+2);
-            dimM+=2;
+            coseM=(int*)realloc(maschi,dimM*2);
+            dimM*=2;
         }
         if(f==dimF){
-            coseF=(int*)realloc(femmine,dimF+2);
-            dimF+=2;
+            coseF=(int*)realloc(femmine,dimF*2);
+            dimF*=2;
         }
+        
+        temp=inserisciDati(/*&elenco,&dim*/);          
+        distinguiSesso(temp,&maschi,&femmine,&m,&f);
+        
         printf("\nVuoi inserire altri numeri? (0 no - 1 si)");
         scanf("%d",&inserito);
         puts("");
-    }while(inserito!=0);
+    }
     
     //ordinaDati(maschi,m);
     //ordinaDati(femmine,f);
