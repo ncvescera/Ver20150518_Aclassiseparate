@@ -80,13 +80,19 @@ void distinguiSesso(studente dato, studente** maschi, studente** femmine, int* m
     k=0;
     j=0;
     for(i=0;i<dim;i++){*/
-        if(dato.sesso==0){
-            *maschi[*m]=dato;
-            *m=*m+1;
-        }
-        else{
-            *femmine[*f]=dato;
-            *f=*f+1;
-        }
+        
    
+}
+studente* rialloca(studente* corrente, int dimCorrente){
+    studente* nuovoPuntatore=NULL;
+    int nuovaDimensione=dimCorrente*2;
+    int i;
+    
+    nuovoPuntatore=(studente*)malloc(nuovaDimensione*sizeof(studente));
+    for(i=0;i<dimCorrente;i++){
+        nuovoPuntatore[i]=corrente[i];
+    }
+    
+    free(corrente);
+    return nuovoPuntatore;
 }

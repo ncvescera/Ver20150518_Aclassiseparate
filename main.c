@@ -30,16 +30,25 @@ int main(int argc, char** argv) {
     inserito=-1;
     while(inserito!=0){
         if(m==dimM){
-            coseM=(int*)realloc(maschi,dimM*2);
+            //coseM=(int*)realloc(maschi,dimM*2);
+            maschi=rialloca(maschi,dimM);
             dimM*=2;
         }
         if(f==dimF){
-            coseF=(int*)realloc(femmine,dimF*2);
+            femmine=rialloca(femmine,dimF);
             dimF*=2;
         }
         
         temp=inserisciDati(/*&elenco,&dim*/);          
-        distinguiSesso(temp,&maschi,&femmine,&m,&f);
+        //distinguiSesso(temp,&maschi,&femmine,&m,&f);
+        if(temp.sesso==0){
+            maschi[m]=temp;
+            m=m+1;
+        }
+        else{
+            femmine[f]=temp;
+            f=f+1;
+        }
         
         printf("\nVuoi inserire altri numeri? (0 no - 1 si)");
         scanf("%d",&inserito);
