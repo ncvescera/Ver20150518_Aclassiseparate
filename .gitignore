@@ -31,3 +31,8 @@
 /dist/
 *stackdump*
 output*.txt
+
+#MieModifiche
+*.inc
+core
+*.csv
